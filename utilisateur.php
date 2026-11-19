@@ -1,0 +1,11 @@
+<?php
+declare(strict_types=1);
+require __DIR__ . '/db.php';
+?>
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ajouter un utilisateur</title><link rel="stylesheet" href="mesStyles.css"><script src="mesControles.js" defer></script></head>
+<body><main class="container"><form action="ajout.php" method="post" onsubmit="return verif1()"><input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>"><fieldset><legend>Ajout d'un utilisateur</legend>
+<label for="i">Identifiant (U suivi de 3 chiffres)</label><input id="i" name="i" type="text" maxlength="4" pattern="U[0-9]{3}" placeholder="U001" required>
+<label for="np">Nom et prénom</label><input id="np" name="np" type="text" maxlength="50" minlength="2" required>
+<div class="actions"><button type="submit">Ajouter</button><button type="reset" class="secondary">Réinitialiser</button></div></fieldset></form></main></body></html>

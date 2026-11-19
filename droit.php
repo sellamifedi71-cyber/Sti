@@ -3,9 +3,10 @@ declare(strict_types=1);
 require __DIR__ . '/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: droit.html');
+    header('Location: droit-form.php');
     exit;
 }
+verify_csrf();
 
 $userId = strtoupper(trim($_POST['id'] ?? ''));
 $documentId = strtoupper(trim($_POST['doc'] ?? ''));

@@ -1,24 +1,7 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-	<form action="ajout.php" method="post" onSubmit="return verif()">
-		<fieldset>
-	<legend>ajout dun utilsateur</legend>
-			<label for="">identifiant</label>
-			<input type="text"> <br>
-			<label for="">nom et prenom</label>
-			<input type="text"> <br>
-			
-			
-	<input type="submit" value="ajout" onClick="verif()" class="b">
-		<input type="reset" value="reset" class="b">
-	
-	</fieldset>
-	</form>
-</body>
-</html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ajouter un utilisateur</title><link rel="stylesheet" href="mesStyles.css"><script src="mesControles.js" defer></script></head>
+<body><main class="container"><form action="ajout.php" method="post" onsubmit="return verif1()"><fieldset><legend>Ajout d'un utilisateur</legend>
+<label for="i">Identifiant (U suivi de 3 chiffres)</label><input id="i" name="i" type="text" maxlength="4" pattern="U[0-9]{3}" placeholder="U001" required>
+<label for="np">Nom et prénom</label><input id="np" name="np" type="text" maxlength="50" minlength="2" required>
+<div class="actions"><button type="submit">Ajouter</button><button type="reset" class="secondary">Réinitialiser</button></div></fieldset></form></main></body></html>

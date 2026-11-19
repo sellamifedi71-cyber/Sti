@@ -3,9 +3,10 @@ declare(strict_types=1);
 require __DIR__ . '/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: utilisateur.html');
+    header('Location: utilisateur.php');
     exit;
 }
+verify_csrf();
 
 $id = strtoupper(trim($_POST['i'] ?? ''));
 $name = trim($_POST['np'] ?? '');
